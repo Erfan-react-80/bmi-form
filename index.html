@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/app.js"></script>
+    <title>استعدادیابی ووشو</title>
+</head>
+
+<body>
+    <main>
+        <h1>فرم بررسی اولیه</h1>
+        <h2>ویژه پسران 9 تا 17 سال</h2>
+        <form action="scripts/result.php" method="get" id="talent-form">
+            <fieldset form="talent-form">
+                <legend>اطلاعات تماس</legend>
+                <label for="name">نام و نام خانوادگی</label>
+                <input type="text" name="name" id="name" autocomplete="name" required>
+
+                <label for="tel">شماره همراه</label>
+                <input type="tel" name="phone" id="phone" autocomplete="tel-local" required>
+
+                <label for="name">شهر محل سکونت</label>
+                <input type="text" id="city" name="city" autocomplete="address-level2" required>
+            </fieldset>
+            <fieldset>
+                <legend>شاخص های ارزیابی</legend>
+                <label for="ag">سن (سال)</label>
+                <input type="number" name="age" id="age" required max="17" min="9">
+
+                <label for="ag">وزن(کیلوگرم)</label>
+                <input type="number" name="weight" id="weight" max="100" min="20" onchange="updateBMI()">
+
+                <label for="ag">قد ایستاده(سانتی متر)</label>
+                <input type="number" name="height-up" id="height-up" max="200" min="100" onchange="updateBMI()">
+
+                <label for="ag">قد نشسته (سانتی متر)</label>
+                <input type="number" name="height-down" id="height-down" max="120" min="30">
+
+                <label for="ag">عرض شانه (سانتی متر)</label>
+                <input type="number" name="arz-shane" id="arz-shane" max="100" min="20">
+
+                <label for="ag">عرض کمر (سانتی متر)</label>
+                <input type="number" name="arz-kamar" id="arz-kamar" max="100" min="20">
+
+            </fieldset>
+            <button type="submit" value="visit">مشاهده نتیجه</button>
+        </form>
+        <p id="result"></p>
+    </main>
+</body>
+
+</html>

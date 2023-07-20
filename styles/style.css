@@ -1,0 +1,132 @@
+:root{
+    --primary: #005ac2;
+    --on-primary: #ffffff;
+    --primary-container: #d8e2ff;
+    --on-primary-contariner: #001a41;
+
+    --secondary: #9c4146;
+    --on-secondary: #ffffff;
+    --secondary-container: #ffdad9;
+    --on-secondary-contariner: #40000a;
+    
+    --background: #fefbff;
+    --on-background: #1b1b1f;
+    --surface: #fefbff;
+    --on-surface: #1b1b1f;
+    --outline: #75777f;
+    --surface-varient: #e1e2ec;
+    --on-surface-varient: #44474f;
+
+    --body-font: "Vazirmatn";
+    --heading-font: "Vazirmatn"
+
+    --soc-shadow: 0px 0px 5px 1px;
+}
+@font-face {
+    font-family: "Vazirmatn";
+    src: url(../fonts/Vazirmatn-Regular.woff2);
+}
+
+/* Basic configurateion */
+a{
+    font-weight: bold;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.5em;
+    color: var(--on-background);
+}
+body{
+    font-family: var(--body-font);
+    background-color: var(--background);
+}
+p{
+    color: var(--on-surface);
+    text-align: justify;
+}
+img{
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
+/* Heading */
+h1{
+    color: var(--primary);
+}
+h2{
+    color: var(--secondary);
+}
+/* Macro Layout */
+main :is(h1, h2){
+    text-align: center;
+}
+
+/* Form section */
+#talent-form{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 20px;
+}
+#talent-form label:after{
+    content: ' * ';
+    color: red;
+}
+#talent-form button{
+    grid-column: 1/3;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    font-family: inherit;
+    padding: 0.8rem 1rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    transition-duration: 0.3s;
+    border: none;
+    width: 90%;
+    margin: auto;
+}
+#talent-form button:hover{
+    background-color: var(--primary-container);
+    color: var(--on-primary-contariner);
+    cursor: pointer;
+}
+#talent-form fieldset{
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    gap: 1.5rem;
+    padding: 2rem;
+}
+#talent-form input{
+    font-family: inherit;
+    border-radius: 5px;
+    border: 2px solid var(--primary);
+    height: 4ch;
+    padding: 1px 5px;
+    transition: background-color .5s;
+}
+#talent-form input:focus{
+    background-color: var(--primary-container);
+}
+#talent-form input:out-of-range{
+    background-color: var(--secondary-container);
+}
+
+/* Form styles */
+.bmi-grade-1{
+    background-color: var(--primary-container);
+    color: var(--on-primary-contariner);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: solid 2px var(--primary)
+}
+
+/* Media queries*/
+@media (max-width: 768px) {
+    #talent-form{
+        grid-template-columns: 1fr;
+    }
+    #talent-form fieldset{
+        grid-template-columns: auto 1fr;
+    }
+    #talent-form button{
+        grid-column: initial;
+    }
+}
